@@ -1,9 +1,10 @@
 version: 2.1
 
 description: >
-  CircleCI Orb for common GCP-related CI commands.
+  CircleCI Orb for common GCP-related CI commands such authentication via OIDC.
 
 display:
+  home_url: "https://github.com/mozilla/gcp-orb"
   source_url: "https://github.com/mozilla/gcp-orb"
 
 orbs:

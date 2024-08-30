@@ -1,15 +1,10 @@
-# Orb Template
+# GCP Orb
 
 
-[![CircleCI Build Status](https://circleci.com/gh/mozilla/.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/mozilla/) [![CircleCI Orb Version](https://badges.circleci.com/orbs/mozilla/gcp.svg)](https://circleci.com/developer/orbs/orb/mozilla/gcp) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mozilla//master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mozilla/gcp-orb/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mozilla/gcp-orb/tree/main) [![CircleCI Orb Version](https://badges.circleci.com/orbs/mozilla/gcp.svg)](https://circleci.com/developer/orbs/orb/mozilla/gcp) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) 
 
 
-
-A project template for Orbs.
-
-This repository is designed to be automatically ingested and modified by the CircleCI CLI's `orb init` command.
-
-_**Edit this area to include a custom title and description.**_
+CircleCI Orb for common GCP-related CI commands used at Mozilla
 
 ---
 
@@ -28,7 +23,7 @@ We welcome [issues](https://github.com/mozilla//issues) to and [pull requests](h
     - For the best experience, squash-and-merge and use [Conventional Commit Messages](https://conventionalcommits.org/).
 2. Find the current version of the orb.
     - You can run `circleci orb info mozilla/gcp | grep "Latest"` to see the current version.
-3. Create a [new Release](https://github.com/mozilla//releases/new) on GitHub.
+3. Create a [new Release](https://github.com/mozilla/gcp-orb/releases/new) on GitHub.
     - Click "Choose a tag" and _create_ a new [semantically versioned](http://semver.org/) tag. (ex: v1.0.0)
       - We will have an opportunity to change this before we publish if needed after the next step.
 4.  Click _"+ Auto-generate release notes"_.

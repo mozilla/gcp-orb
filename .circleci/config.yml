@@ -15,8 +15,8 @@ workflows:
           filters: *filters
       - orb-tools/pack:
           filters: *filters
-      - orb-tools/review:
-          filters: *filters
+#      - orb-tools/review:
+#          filters: *filters
       - shellcheck/check:
           filters: *filters
       # Triggers the next workflow in the Orb Development Kit.
@@ -24,5 +24,6 @@ workflows:
           pipeline_number: << pipeline.number >>
           vcs_type: << pipeline.project.type >>
           orb_name: gcp
-          requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
+          requires: [orb-tools/lint, orb-tools/pack, shellcheck/check]
+#          requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters

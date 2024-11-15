@@ -1,0 +1,47 @@
+description: >
+  Wrapper for gcp-cli orb, provides an opinionated gcloud CLI initialization using OIDC to impersonate a service account.
+parameters:
+  google_project_id:
+    type: string
+    default: "$(GOOGLE_PROJECT_ID)"
+    description: >
+      Name of the Google project ID to set as default for the gcloud CLI.
+  google_project_number:
+    type: string
+    default: "$(GOOGLE_PROJECT_NUMBER)"
+    description: >
+      Google project number used to configure OIDC.
+  workload_identity_pool_id:
+    type: string
+    default: "$(OIDC_WIP_ID)"
+    description: >
+      OIDC configured workload identity pool identifier.
+  workload_identity_pool_provider_id:
+    type: string
+    default: "$(OIDC_WIP_PROVIDER_ID)"
+    description: |
+      OIDC configured workload identity pool provider identifier.
+  service_account_email:
+    type: string
+    default: "$(OIDC_SERVICE_ACCOUNT_EMAIL)"
+    description: Service account to impersonate.
+steps:
+  - run:
+      name: Prepare environment variables for OIDC authentication
+      command: |
+        echo 'export ORB_GOOGLE_PROJECT_ID=<<parameters.google_project_id>>' >> "$BASH_ENV"
+        echo "export ORB_OIDC_WIP_ID=<<parameters.workload_identity_pool_id>>" >> "$BASH_ENV"
+        echo "export ORB_OIDC_WIP_PROVIDER_ID=<<parameters.workload_identity_pool_provider_id>>" >> "$BASH_ENV"
+        echo "export ORB_GOOGLE_PROJECT_NUMBER=<<parameters.google_project_number>>" >> "$BASH_ENV"
+        echo "export ORB_OIDC_SERVICE_ACCOUNT_EMAIL=<<parameters.service_account_email>>" >> "$BASH_ENV"
+  - gcp-cli/setup:
+      use_oidc: true
+      google_project_id: ORB_GOOGLE_PROJECT_ID
+      google_project_number: ORB_GOOGLE_PROJECT_NUMBER
+      workload_identity_pool_id: ORB_OIDC_WIP_ID
+      workload_identity_pool_provider_id: ORB_OIDC_WIP_PROVIDER_ID
+      service_account_email: ORB_OIDC_SERVICE_ACCOUNT_EMAIL
+  - run:
+      name: Generate Identity Token
+      command: |
+        echo "export ID_TOKEN=$(gcloud auth print-identity-token --impersonate-service-account ${GCP_SERVICE_ACCOUNT_EMAIL})" >> "$BASH_ENV"

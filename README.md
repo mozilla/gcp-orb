@@ -1,7 +1,7 @@
 # GCP Orb
 
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mozilla/gcp-orb/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mozilla/gcp-orb/tree/main) [![CircleCI Orb Version](https://badges.circleci.com/orbs/mozilla/gcp.svg)](https://circleci.com/developer/orbs/orb/mozilla/gcp) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mozilla/gcp-orb/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mozilla/gcp-orb/tree/main) [![CircleCI Orb Version](https://badges.circleci.com/orbs/mozilla/gcp.svg)](https://circleci.com/developer/orbs/orb/mozilla/gcp) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] 
 
 
 CircleCI Orb for common GCP-related CI commands used at Mozilla

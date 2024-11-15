@@ -1,5 +1,5 @@
 description: >
-  Example usage to authenticate a gcloud CLI using OIDC, 
+  Example usage to authenticate a gcloud CLI using OIDC,
   assuming the required environment variables are defined in a context.
 usage:
   version: 2.1
